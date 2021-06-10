@@ -1,0 +1,12 @@
+
+> api@1.0.0 start E:\Ludo\Documents\Developpement\TAX\rates_caller
+> npm run build && npx node -r ts-node/register ./src/index.ts --unhandled-rejections=strict
+
+
+> api@1.0.0 build E:\Ludo\Documents\Developpement\TAX\rates_caller
+> tsc
+
+1.237
+1.23
+1.2890000000000001
+1.298

@@ -12,6 +12,8 @@ const TIMEOUT = 1000;
 
 const map = new Map<number,number>();
 
+const urlResults = new Map<string,number>();
+
 const main = async () => {
     const p = new Promise<void>((resolve, reject) => {
         const readInterface = readline.createInterface({
@@ -35,6 +37,7 @@ const main = async () => {
     
     });
     p.then(() => {
+        console.log('map size', map.size);
         for (let i = 0; i < map.size; i++) {
             console.log(map.get(i));
         }
@@ -54,6 +57,11 @@ async function readLine(i: number, line: string) {
 
 async function callAPI(i: number, url: string) {
     return new Promise<void>((resolve, reject) => {
+        if (urlResults.has(url)) {
+            map.set(i, urlResults.get(url) as number);
+            resolve();
+            return;
+        }
         https.get(url, (resp) => {
             let data = '';
 
@@ -69,7 +77,9 @@ async function callAPI(i: number, url: string) {
                     reject(data);
                 }
                 const dataRate = JSON.parse(data).Data.Data;
-                map.set(i, (dataRate[1].close + dataRate[1].open)/2);
+                const value = (dataRate[1].close + dataRate[1].open)/2;
+                map.set(i, value);
+                urlResults.set(url, value);
                 resolve();
             })
         })

@@ -1,0 +1,6 @@
+https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym=USD&limit=1&toTs=1513814400
+https://min-api.cryptocompare.com/data/v2/histoday?fsym=EUR&tsym=USD&limit=1&toTs=1512691200
+https://min-api.cryptocompare.com/data/v2/histoday?fsym=EUR&tsym=USD&limit=1&toTs=1512864000
+https://min-api.cryptocompare.com/data/v2/histoday?fsym=GBP&tsym=USD&limit=1&toTs=1612828800
+https://min-api.cryptocompare.com/data/v2/histoday?fsym=EUR&tsym=USD&limit=1&toTs=1612915200
+https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym=USD&limit=1&toTs=1608854400
